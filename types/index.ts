@@ -7,7 +7,8 @@ export interface NativeLandFeature {
   properties: {
     Name: string;
     Slug: string;
-    Color: string;
+    Color?: string;  // some responses use uppercase
+    color?: string;  // native-land.ca API returns lowercase
     FrenchName?: string;
     description?: string;
   };

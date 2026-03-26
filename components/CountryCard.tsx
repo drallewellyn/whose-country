@@ -55,7 +55,7 @@ export default function CountryCard({
             {/* Header bar using territory colour */}
             <div
               className="h-2"
-              style={{ backgroundColor: territory.properties.Color || "#c2410c" }}
+              style={{ backgroundColor: territory.properties.color || territory.properties.Color || "#c2410c" }}
             />
 
             <div className="p-6 space-y-5">

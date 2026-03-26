@@ -4,11 +4,17 @@ import { useState } from "react";
 import LocationSearch from "@/components/LocationSearch";
 import CountryCard from "@/components/CountryCard";
 import AcknowledgementGuide from "@/components/AcknowledgementGuide";
+import CountryMapDynamic from "@/components/CountryMapDynamic";
 import type { NativeLandFeature } from "@/types";
 
 interface CountryData {
   territories: NativeLandFeature[];
   languages: NativeLandFeature[];
+}
+
+interface Coords {
+  lat: number;
+  lng: number;
 }
 
 type AppState = "idle" | "loading" | "results" | "error";
@@ -17,11 +23,13 @@ export default function Home() {
   const [appState, setAppState] = useState<AppState>("idle");
   const [countryData, setCountryData] = useState<CountryData | null>(null);
   const [locationLabel, setLocationLabel] = useState("");
+  const [coords, setCoords] = useState<Coords | null>(null);
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleLocation = async (lat: number, lng: number, label: string) => {
     setAppState("loading");
     setLocationLabel(label);
+    setCoords({ lat, lng });
     setErrorMsg("");
 
     try {
@@ -46,6 +54,7 @@ export default function Home() {
     setAppState("idle");
     setCountryData(null);
     setLocationLabel("");
+    setCoords(null);
   };
 
   const primaryTerritory = countryData?.territories[0];
@@ -108,8 +117,16 @@ export default function Home() {
         )}
 
         {/* Results */}
-        {appState === "results" && countryData && (
+        {appState === "results" && countryData && coords && (
           <>
+            {/* Map — shown first so user can verify their location */}
+            <CountryMapDynamic
+              lat={coords.lat}
+              lng={coords.lng}
+              territories={countryData.territories}
+              locationLabel={locationLabel}
+            />
+
             <CountryCard
               territories={countryData.territories}
               languages={countryData.languages}
