@@ -88,7 +88,7 @@ export default function Home() {
         <div className="max-w-lg mx-auto flex items-center justify-between">
           <div>
             <h1 className="font-bold text-lg leading-tight">Whose Country?</h1>
-            <p className="text-stone-400 text-xs">Cultural Safety Guide · Australia</p>
+            <p className="text-stone-400 text-xs">Cultural Safety Guide · Australia | Aotearoa</p>
           </div>
           {appState === "results" && (
             <button
@@ -253,9 +253,10 @@ function Disclaimer() {
   return (
     <div className="text-xs text-stone-400 text-center px-4 leading-relaxed">
       This app is a prototype. Language data requires validation by language
-      custodians. Country boundaries are sourced from Native Land Digital and
-      are not legally authoritative. Always seek guidance from Traditional
-      Owners and local Aboriginal and Torres Strait Islander organisations.
+      custodians. Country and iwi boundaries are sourced from Native Land
+      Digital and are not legally authoritative. Always seek guidance from
+      Traditional Owners, Elders, and local Aboriginal, Torres Strait Islander,
+      and Māori organisations.
     </div>
   );
 }

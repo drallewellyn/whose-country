@@ -10,7 +10,7 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "Whose Country? — Cultural Safety Guide",
   description:
-    "Find out whose Country you are on and learn to acknowledge it respectfully. Supporting cultural safety across Australia.",
+    "Find out whose Country you are on and learn to acknowledge it respectfully. Supporting cultural safety across Australia and Aotearoa New Zealand.",
 };
 
 export default function RootLayout({
