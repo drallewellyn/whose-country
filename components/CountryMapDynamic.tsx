@@ -18,6 +18,7 @@ interface Props {
   lng: number;
   territories: NativeLandFeature[];
   locationLabel: string;
+  onPinMove: (lat: number, lng: number) => void;
 }
 
 export default function CountryMapDynamic(props: Props) {

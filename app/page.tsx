@@ -25,6 +25,7 @@ export default function Home() {
   const [locationLabel, setLocationLabel] = useState("");
   const [coords, setCoords] = useState<Coords | null>(null);
   const [errorMsg, setErrorMsg] = useState("");
+  const [pinLoading, setPinLoading] = useState(false);
 
   const handleLocation = async (lat: number, lng: number, label: string) => {
     setAppState("loading");
@@ -47,6 +48,21 @@ export default function Home() {
         err instanceof Error ? err.message : "Something went wrong."
       );
       setAppState("error");
+    }
+  };
+
+  const handlePinMove = async (lat: number, lng: number) => {
+    setCoords({ lat, lng });
+    setLocationLabel("Dropped pin");
+    setPinLoading(true);
+    try {
+      const res = await fetch(`/api/country?lat=${lat}&lng=${lng}`);
+      const data = await res.json();
+      if (res.ok) setCountryData(data);
+    } catch {
+      // silently fail — existing results remain visible
+    } finally {
+      setPinLoading(false);
     }
   };
 
@@ -125,7 +141,16 @@ export default function Home() {
               lng={coords.lng}
               territories={countryData.territories}
               locationLabel={locationLabel}
+              onPinMove={handlePinMove}
             />
+
+            {/* Re-lookup indicator when pin is moved */}
+            {pinLoading && (
+              <div className="flex items-center justify-center gap-2 text-sm text-stone-500 py-1">
+                <div className="w-4 h-4 border-2 border-stone-300 border-t-stone-600 rounded-full animate-spin" />
+                Looking up new location…
+              </div>
+            )}
 
             <CountryCard
               territories={countryData.territories}
