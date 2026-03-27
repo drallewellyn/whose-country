@@ -28,14 +28,28 @@ const markerIcon = L.icon({
 interface Props {
   lat: number;
   lng: number;
-  territories: NativeLandFeature[];
+  territories: NativeLandFeature[];        // all territories (for map)
+  exactTerritories: NativeLandFeature[];   // only those containing the pin
   locationLabel: string;
   onPinMove: (lat: number, lng: number) => void;
 }
 
-// Helper: converts GeoJSON [lng, lat] coords to Leaflet [lat, lng]
-function geoJsonToLatLng(coords: number[][][]): [number, number][] {
-  return coords[0].map(([lng, lat]) => [lat, lng]);
+// Helper: converts GeoJSON [lng, lat] ring to Leaflet [lat, lng] pairs
+function ringToLatLng(ring: number[][]): [number, number][] {
+  return ring.map(([lng, lat]) => [lat, lng]);
+}
+
+// Returns array of position arrays — handles both Polygon and MultiPolygon
+function getPositions(geometry: { type: string; coordinates: unknown }): [number, number][][] {
+  if (geometry.type === "Polygon") {
+    const coords = geometry.coordinates as number[][][];
+    return [ringToLatLng(coords[0])];
+  }
+  if (geometry.type === "MultiPolygon") {
+    const coords = geometry.coordinates as number[][][][];
+    return coords.map((poly) => ringToLatLng(poly[0]));
+  }
+  return [];
 }
 
 // Auto-fit map bounds to show marker + all polygons (only on first render)
@@ -83,9 +97,11 @@ export default function CountryMap({
   lat,
   lng,
   territories,
+  exactTerritories,
   locationLabel,
   onPinMove,
 }: Props) {
+  const exactSlugs = new Set(exactTerritories.map((t) => t.properties.Slug));
   const [pinPos, setPinPos] = useState<[number, number]>([lat, lng]);
 
   // Keep pin in sync if parent updates location (e.g. new search)
@@ -120,28 +136,34 @@ export default function CountryMap({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {/* Territory polygons */}
+        {/* Territory polygons — exact (solid) and nearby (dashed) */}
         {territories.map((territory) => {
-          const coords = territory.geometry.coordinates as number[][][];
-          const positions = geoJsonToLatLng(coords);
+          const isExact = exactSlugs.has(territory.properties.Slug);
           const color =
             territory.properties.color ||
             territory.properties.Color ||
             "#c2410c";
-          return (
+          const positionSets = getPositions(territory.geometry);
+          return positionSets.map((positions, i) => (
             <Polygon
-              key={territory.properties.Slug}
+              key={`${territory.properties.Slug}-${i}`}
               positions={positions}
               pathOptions={{
                 color,
                 fillColor: color,
-                fillOpacity: 0.2,
-                weight: 2,
+                fillOpacity: isExact ? 0.2 : 0.08,
+                weight: isExact ? 2 : 1.5,
+                dashArray: isExact ? undefined : "6 4",
               }}
             >
-              <Popup>{territory.properties.Name} Country</Popup>
+              <Popup>
+                <strong>{territory.properties.Name}</strong>
+                {!isExact && (
+                  <span className="text-stone-400"> · nearby</span>
+                )}
+              </Popup>
             </Polygon>
-          );
+          ));
         })}
 
         {/* Draggable user location marker */}
@@ -163,10 +185,16 @@ export default function CountryMap({
         <FitBounds lat={lat} lng={lng} territories={territories} />
       </MapContainer>
 
-      <div className="px-4 py-2 bg-stone-50 border-t border-stone-200 flex items-center gap-2 text-xs text-stone-500">
-        <span className="inline-block w-3 h-3 rounded-sm bg-blue-400 opacity-60 border border-blue-500" />
-        Territory boundary (approximate) ·
-        <span className="font-medium text-stone-600">{locationLabel}</span>
+      <div className="px-4 py-2 bg-stone-50 border-t border-stone-200 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-stone-500">
+        <span className="flex items-center gap-1">
+          <span className="inline-block w-5 h-0.5 bg-stone-500 opacity-80" />
+          At your location
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="inline-block w-5 h-0.5 border-t border-dashed border-stone-400" />
+          Nearby sub-territory
+        </span>
+        <span className="text-stone-400">· {locationLabel}</span>
       </div>
     </div>
   );

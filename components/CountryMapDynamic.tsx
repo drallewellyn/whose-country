@@ -17,6 +17,7 @@ interface Props {
   lat: number;
   lng: number;
   territories: NativeLandFeature[];
+  exactTerritories: NativeLandFeature[];
   locationLabel: string;
   onPinMove: (lat: number, lng: number) => void;
 }

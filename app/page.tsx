@@ -10,6 +10,7 @@ import type { NativeLandFeature } from "@/types";
 interface CountryData {
   territories: NativeLandFeature[];
   languages: NativeLandFeature[];
+  mapTerritories: NativeLandFeature[];
 }
 
 interface Coords {
@@ -145,7 +146,8 @@ export default function Home() {
             <CountryMapDynamic
               lat={coords.lat}
               lng={coords.lng}
-              territories={countryData.territories}
+              territories={countryData.mapTerritories ?? countryData.territories}
+              exactTerritories={countryData.territories}
               locationLabel={locationLabel}
               onPinMove={handlePinMove}
             />
