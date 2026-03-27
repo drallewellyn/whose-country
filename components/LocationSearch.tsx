@@ -85,10 +85,6 @@ export default function LocationSearch({ onLocation, isLoading }: Props) {
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") doSearch();
-  };
-
   const selectResult = (s: GeocodeSuggestion) => {
     setResults([]);
     setQuery(shortLabel(s));
@@ -134,7 +130,10 @@ export default function LocationSearch({ onLocation, isLoading }: Props) {
       </div>
 
       {/* Search input + button */}
-      <div className="flex gap-2">
+      <form
+        onSubmit={(e) => { e.preventDefault(); doSearch(); }}
+        className="flex gap-2"
+      >
         <input
           type="text"
           value={query}
@@ -144,18 +143,17 @@ export default function LocationSearch({ onLocation, isLoading }: Props) {
             setSearched(false);
             setSearchError(null);
           }}
-          onKeyDown={handleKeyDown}
           placeholder="e.g. Redfern, or 2300"
           className="flex-1 border border-stone-300 rounded-xl px-4 py-3 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent"
         />
         <button
-          onClick={doSearch}
+          type="submit"
           disabled={searching || !query.trim()}
           className="px-5 py-3 bg-stone-800 hover:bg-stone-700 disabled:opacity-50 text-white font-medium rounded-xl transition-colors whitespace-nowrap"
         >
           {searching ? <Spinner /> : "Search"}
         </button>
-      </div>
+      </form>
 
       {/* Error */}
       {searchError && (
