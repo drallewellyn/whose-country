@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import LocationSearch from "@/components/LocationSearch";
 import CountryCard from "@/components/CountryCard";
 import AcknowledgementGuide from "@/components/AcknowledgementGuide";
@@ -235,17 +236,28 @@ export default function Home() {
         )}
       </main>
 
-      <footer className="text-center py-4 text-xs text-stone-400 border-t border-stone-100 px-4">
-        Territory data provided by{" "}
-        <a
-          href="https://native-land.ca"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:text-stone-600"
-        >
-          Native Land Digital
-        </a>
-        . Boundaries are approximate and indicative only.
+      <footer className="text-center py-4 text-xs text-stone-400 border-t border-stone-100 px-4 space-y-1">
+        <div>
+          <Link
+            href="/what-is-cultural-safety"
+            className="underline hover:text-stone-600 font-medium"
+          >
+            What is Cultural Safety?
+          </Link>
+          {" "}· MBA & MCNZ definitions
+        </div>
+        <div>
+          Territory data provided by{" "}
+          <a
+            href="https://native-land.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-stone-600"
+          >
+            Native Land Digital
+          </a>
+          . Boundaries are approximate and indicative only.
+        </div>
       </footer>
     </div>
   );
