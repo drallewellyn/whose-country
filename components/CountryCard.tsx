@@ -2,6 +2,7 @@
 
 import type { NativeLandFeature } from "@/types";
 import { languageWordsBySlug, noLanguageDataMessage } from "@/lib/languageData";
+import { getIndigenousPlaceName } from "@/lib/placeNames";
 
 interface Props {
   territories: NativeLandFeature[];
@@ -25,8 +26,39 @@ export default function CountryCard({
     );
   }
 
+  const placeName = getIndigenousPlaceName(locationLabel);
+
   return (
     <div className="space-y-4">
+      {/* Indigenous place name banner */}
+      {placeName && (
+        <div className="bg-stone-900 text-white rounded-2xl p-5 space-y-2">
+          <p className="text-stone-400 text-xs uppercase tracking-wider">
+            Indigenous place name
+          </p>
+          <div className="flex items-baseline gap-3 flex-wrap">
+            <span className="text-2xl font-bold">{placeName.indigenousName}</span>
+            <span className="text-stone-400 text-sm">{placeName.languageGroup} language</span>
+          </div>
+          {placeName.meaning && (
+            <p className="text-stone-300 text-sm">
+              <span className="text-stone-500">Meaning: </span>
+              {placeName.meaning}
+            </p>
+          )}
+          {placeName.notes && (
+            <p className="text-stone-400 text-xs leading-relaxed italic">
+              {placeName.notes}
+            </p>
+          )}
+          {!placeName.verified && (
+            <p className="text-amber-400 text-xs mt-1">
+              Needs validation by language custodians before public use
+            </p>
+          )}
+        </div>
+      )}
+
       <p className="text-stone-500 text-sm text-center">
         Showing results for{" "}
         <span className="font-medium text-stone-700">{locationLabel}</span>
