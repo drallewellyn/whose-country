@@ -1,8 +1,9 @@
 "use client";
 
-import type { NativeLandFeature } from "@/types";
+import type { NativeLandFeature, Source } from "@/types";
 import { languageWordsBySlug, noLanguageDataMessage } from "@/lib/languageData";
 import { getIndigenousPlaceName } from "@/lib/placeNames";
+import { getLocalityInfo } from "@/lib/localityInfo";
 
 interface Props {
   territories: NativeLandFeature[];
@@ -73,6 +74,7 @@ export default function CountryCard({
       {territories.map((territory) => {
         const slug = territory.properties.Slug;
         const words = languageWordsBySlug[slug.toLowerCase()];
+        const locality = getLocalityInfo(slug);
         const languageMatch = languages.find((l) =>
           l.properties.Name.toLowerCase().includes(
             territory.properties.Name.toLowerCase().split(" ")[0]
@@ -126,42 +128,112 @@ export default function CountryCard({
                   </span>
                 </h3>
                 {words ? (
-                  <div className="grid grid-cols-2 gap-3">
-                    {words.hello && (
-                      <WordTile
-                        label="Hello"
-                        word={words.hello}
-                        phonetic={words.helloPhonetic}
-                      />
-                    )}
-                    {words.goodbye && (
-                      <WordTile
-                        label="Goodbye"
-                        word={words.goodbye}
-                        phonetic={words.goodbyePhonetic}
-                      />
-                    )}
-                    {words.thankyou && (
-                      <WordTile
-                        label="Thank you"
-                        word={words.thankyou}
-                        phonetic={words.thankyouPhonetic}
-                      />
-                    )}
-                    {words.country && (
-                      <WordTile
-                        label="Country / Land"
-                        word={words.country}
-                        phonetic={words.countryPhonetic}
-                      />
-                    )}
-                  </div>
+                  <>
+                    <div className="grid grid-cols-2 gap-3">
+                      {words.hello && (
+                        <WordTile
+                          label="Hello"
+                          word={words.hello}
+                          phonetic={words.helloPhonetic}
+                        />
+                      )}
+                      {words.goodbye && (
+                        <WordTile
+                          label="Goodbye"
+                          word={words.goodbye}
+                          phonetic={words.goodbyePhonetic}
+                        />
+                      )}
+                      {words.thankyou && (
+                        <WordTile
+                          label="Thank you"
+                          word={words.thankyou}
+                          phonetic={words.thankyouPhonetic}
+                        />
+                      )}
+                      {words.country && (
+                        <WordTile
+                          label="Country / Land"
+                          word={words.country}
+                          phonetic={words.countryPhonetic}
+                        />
+                      )}
+                      {words.extraPhrases?.map((p) => (
+                        <WordTile
+                          key={p.label}
+                          label={p.label}
+                          word={p.word}
+                          phonetic={p.phonetic}
+                        />
+                      ))}
+                    </div>
+                    <SourceLine sources={words.sources} fallback={words.source} />
+                  </>
                 ) : (
                   <p className="text-stone-500 text-sm italic">
                     {noLanguageDataMessage}
                   </p>
                 )}
               </div>
+
+              {/* Key facts */}
+              {locality?.keyFacts && locality.keyFacts.length > 0 && (
+                <div>
+                  <h3 className="font-semibold text-stone-700 mb-3">
+                    Key facts
+                  </h3>
+                  <ul className="space-y-3">
+                    {locality.keyFacts.map((fact, i) => (
+                      <li
+                        key={i}
+                        className="text-sm text-stone-600 leading-relaxed border-l-2 border-stone-200 pl-3"
+                      >
+                        {fact.text}
+                        <SourceLine sources={[fact.source]} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Notable people */}
+              {locality?.notablePeople && locality.notablePeople.length > 0 && (
+                <div>
+                  <h3 className="font-semibold text-stone-700 mb-3">
+                    Notable people from this Country
+                  </h3>
+                  <div className="space-y-3">
+                    {locality.notablePeople.map((person) => (
+                      <div
+                        key={person.name}
+                        className="bg-stone-50 rounded-xl p-4 border border-stone-100"
+                      >
+                        <div className="flex items-baseline gap-2 flex-wrap">
+                          <span className="font-semibold text-stone-800">
+                            {person.name}
+                          </span>
+                          {person.lifespan && (
+                            <span className="text-xs text-stone-400">
+                              {person.lifespan}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs text-ochre-600 font-medium mt-0.5">
+                          {person.role}
+                        </p>
+                        <p className="text-sm text-stone-600 leading-relaxed mt-1.5">
+                          {person.bio}
+                        </p>
+                        <SourceLine sources={[person.source]} />
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-amber-700 text-xs mt-3 italic">
+                    Some communities have cultural protocols about naming people
+                    who have passed away. This list requires community review.
+                  </p>
+                </div>
+              )}
 
               {/* Learn more link */}
               <a
@@ -191,6 +263,41 @@ export default function CountryCard({
       })}
     </div>
   );
+}
+
+function SourceLine({
+  sources,
+  fallback,
+}: {
+  sources?: Source[];
+  fallback?: string;
+}) {
+  if (sources && sources.length > 0) {
+    return (
+      <p className="text-xs text-stone-400 mt-1.5">
+        <span className="text-stone-400">Source: </span>
+        {sources.map((s, i) => (
+          <span key={s.url}>
+            {i > 0 && "; "}
+            <a
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-stone-300 hover:text-ochre-600 hover:decoration-ochre-400"
+            >
+              {s.name}
+            </a>
+          </span>
+        ))}
+      </p>
+    );
+  }
+  if (fallback) {
+    return (
+      <p className="text-xs text-stone-400 mt-1.5">Source: {fallback}</p>
+    );
+  }
+  return null;
 }
 
 function WordTile({

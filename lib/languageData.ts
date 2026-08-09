@@ -137,6 +137,42 @@ export const languageWordsBySlug: Record<string, LanguageWords> = {
     source: "Placeholder — requires community review",
   },
 
+  // Arrernte / Mparntwe (Alice Springs) & Central Australia
+  // Eastern & Central Arrernte is one of the strongest surviving Aboriginal
+  // languages (~4,100 speakers, 2021 census) and is taught in Alice Springs
+  // schools. "Werte" is a widely used public greeting. Deeper vocabulary and
+  // any culturally restricted words require guidance from Arrernte custodians
+  // and the Institute for Aboriginal Development (IAD).
+  arrernte: {
+    hello: "Werte",
+    helloPhonetic: "WER-ta",
+    country: "Apmere",
+    countryPhonetic: "AP-ma-ra",
+    extraPhrases: [
+      { label: "Are you well?", word: "Unte mwerre?" },
+      { label: "Yes, I'm well", word: "Ye, ayenge mwerre" },
+      { label: "Yes", word: "Ye", phonetic: "ya" },
+      { label: "No", word: "Arrangkwe", phonetic: "arrang-kwa" },
+      { label: "Water", word: "Kwatye", phonetic: "kwa-tya" },
+    ],
+    source:
+      "Wikipedia (Arrernte language); Wikivoyage Eastern Arrernte phrasebook; IAD Central Arrernte Dictionary",
+    sources: [
+      {
+        name: "Wikipedia — Arrernte language",
+        url: "https://en.wikipedia.org/wiki/Arrernte_language",
+      },
+      {
+        name: "Wikivoyage — Eastern Arrernte phrasebook",
+        url: "https://en.wikivoyage.org/wiki/Eastern_Arrernte_phrasebook",
+      },
+      {
+        name: "IAD Press — Eastern & Central Arrernte spelling and pronunciation",
+        url: "https://iadpd.com.au/ecarrernte-spelling-and-pronunciation/",
+      },
+    ],
+  },
+
   // --- AOTEAROA NEW ZEALAND ---
   // Māori is a single language shared across iwi with some dialectal variation.
   // Basic greetings are widely used and publicly shared with community blessing.
