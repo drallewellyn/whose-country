@@ -226,6 +226,15 @@ export default function Home() {
                         Common Ground
                       </a>{" "}— cultural awareness education
                     </li>
+                    <li>
+                      <a href="https://c21ch.newcastle.edu.au/colonialmassacres/" target="_blank" rel="noopener noreferrer" className="text-stone-800 font-medium hover:underline">
+                        Colonial Frontier Massacres, 1788–1930
+                      </a>{" "}— University of Newcastle map of frontier violence
+                      during colonisation.{" "}
+                      <span className="text-stone-400">
+                        Warning: contains information that may be distressing.
+                      </span>
+                    </li>
                   </>
                 )}
               </ul>
