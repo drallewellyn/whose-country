@@ -52,6 +52,16 @@ export default function CountryCard({
               {placeName.notes}
             </p>
           )}
+          {placeName.sourceUrl && (
+            <a
+              href={placeName.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-stone-400 text-xs underline decoration-stone-600 hover:text-white"
+            >
+              Source: {placeName.source}
+            </a>
+          )}
           {!placeName.verified && (
             <p className="text-amber-400 text-xs mt-1">
               Needs validation by language custodians before public use

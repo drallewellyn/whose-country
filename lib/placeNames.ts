@@ -19,6 +19,7 @@ export interface IndigenousPlaceName {
   nation: string;
   notes?: string;
   source: string;
+  sourceUrl?: string; // linkable citation
   verified: boolean; // false = needs community review before publishing
 }
 
@@ -219,9 +220,49 @@ const placeNameData: Record<string, IndigenousPlaceName> = {
   // Northern Territory
   darwin: {
     indigenousName: "Garramilla",
-    languageGroup: "Larrakia",
+    meaning: "White rock — after the white stone and sea cliffs around Darwin's harbour and beaches",
+    languageGroup: "Larrakia (Gulumirrgin)",
     nation: "Larrakia",
+    notes: "The Larrakia are the saltwater people and Traditional Owners of the Darwin region",
     source: "Larrakia Nation Aboriginal Corporation",
+    sourceUrl: "https://larrakia.com/about/the-larrakia-people/",
+    verified: false,
+  },
+  nhulunbuy: {
+    indigenousName: "Nhulunbuy",
+    meaning: "From Nhulun (the Yolŋu name for Mount Saunders, a sacred site) — Yolŋu elders chose this name over the colonial 'Gove'",
+    languageGroup: "Yolŋu (Rirratjiŋu clan)",
+    nation: "Yolŋu",
+    notes: "Main town of the Gove Peninsula in northeast Arnhem Land",
+    source: "Wikipedia — Nhulunbuy",
+    sourceUrl: "https://en.wikipedia.org/wiki/Nhulunbuy",
+    verified: false,
+  },
+  yirrkala: {
+    indigenousName: "Yirrkala",
+    languageGroup: "Yolŋu (Rirratjiŋu clan)",
+    nation: "Yolŋu",
+    notes: "Homeland community on the Gove Peninsula; site of the 1963 Yirrkala Bark Petitions and the Buku-Larrŋgay Mulka art centre",
+    source: "Wikipedia — Yirrkala",
+    sourceUrl: "https://en.wikipedia.org/wiki/Yirrkala",
+    verified: false,
+  },
+  wurrumiyanga: {
+    indigenousName: "Wurrumiyanga",
+    languageGroup: "Tiwi",
+    nation: "Tiwi",
+    notes: "Largest community on the Tiwi Islands, on Bathurst Island; renamed from the mission-era name Nguiu in 2010 at the request of the Tiwi Land Council",
+    source: "Wikipedia — Wurrumiyanga",
+    sourceUrl: "https://en.wikipedia.org/wiki/Wurrumiyanga",
+    verified: false,
+  },
+  "tiwi islands": {
+    indigenousName: "Tiwi (Tunuvivi)",
+    languageGroup: "Tiwi",
+    nation: "Tiwi",
+    notes: "Bathurst and Melville Islands in the Timor Sea, north of Darwin; the Tiwi language is a linguistic isolate",
+    source: "Wikipedia — Tiwi people",
+    sourceUrl: "https://en.wikipedia.org/wiki/Tiwi_people",
     verified: false,
   },
   "alice springs": {
@@ -242,12 +283,41 @@ const placeNameData: Record<string, IndigenousPlaceName> = {
     verified: false,
   },
   uluru: {
-    indigenousName: "Uluru",
-    meaning: "The Anangu name — the English name Ayers Rock is the colonial name",
+    indigenousName: "Uluṟu",
+    meaning: "The Aṉangu name — the English name Ayers Rock was applied by a colonial surveyor in 1873",
     languageGroup: "Pitjantjatjara / Yankunytjatjara",
-    nation: "Anangu",
-    notes: "Uluru IS the Indigenous name; the site's full dual name is Uluṟu-Kata Tjuṯa National Park",
-    source: "Parks Australia / Anangu Traditional Owners",
+    nation: "Aṉangu",
+    notes: "Uluṟu IS the Indigenous name; it is sacred to the Aṉangu and the site's full dual name is Uluṟu-Kata Tjuṯa National Park",
+    source: "Parks Australia / Wikipedia — Uluru",
+    sourceUrl: "https://en.wikipedia.org/wiki/Uluru",
+    verified: false,
+  },
+  "kata tjuta": {
+    indigenousName: "Kata Tjuṯa",
+    meaning: "Many heads",
+    languageGroup: "Pitjantjatjara / Yankunytjatjara",
+    nation: "Aṉangu",
+    notes: "The domed rock formations near Uluṟu, dual-named Kata Tjuṯa / Mount Olga",
+    source: "Parks Australia — Uluṟu-Kata Tjuṯa National Park",
+    sourceUrl: "https://uluru.gov.au/discover/culture/language/",
+    verified: false,
+  },
+  mutitjulu: {
+    indigenousName: "Muṯitjulu",
+    languageGroup: "Pitjantjatjara / Yankunytjatjara",
+    nation: "Aṉangu",
+    notes: "The Aṉangu community at the base of Uluṟu, within Uluṟu-Kata Tjuṯa National Park",
+    source: "Parks Australia — Uluṟu-Kata Tjuṯa National Park",
+    sourceUrl: "https://uluru.gov.au/discover/culture/language/",
+    verified: false,
+  },
+  yulara: {
+    indigenousName: "Uluṟu / Aṉangu Country",
+    languageGroup: "Pitjantjatjara / Yankunytjatjara",
+    nation: "Aṉangu",
+    notes: "The visitor town serving Uluṟu-Kata Tjuṯa; you are on Aṉangu Country",
+    source: "Parks Australia — Uluṟu-Kata Tjuṯa National Park",
+    sourceUrl: "https://uluru.gov.au/discover/culture/language/",
     verified: false,
   },
 

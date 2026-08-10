@@ -12,7 +12,86 @@
  * Every fact and biography carries an explicit, linkable source.
  */
 
-import type { LocalityInfo } from "@/types";
+import type { KeyFact, LocalityInfo, NotablePerson } from "@/types";
+
+// Aṉangu content is shared by the Pitjantjatjara and Yankunytjatjara slugs.
+const ANANGU_FACTS: KeyFact[] = [
+  {
+    text: "Aṉangu is the name several Aboriginal peoples of the Central Western Desert — including the Pitjantjatjara and Yankunytjatjara — use for themselves, from a word meaning 'person'.",
+    source: {
+      name: "Wikipedia — Aṉangu",
+      url: "https://en.wikipedia.org/wiki/A%E1%B9%89angu",
+    },
+  },
+  {
+    text: "Uluṟu is sacred to the Aṉangu and sits within Uluṟu-Kata Tjuṯa National Park in the southern Northern Territory.",
+    source: {
+      name: "Wikipedia — Uluru",
+      url: "https://en.wikipedia.org/wiki/Uluru",
+    },
+  },
+  {
+    text: "Tjukurpa is the Aṉangu word for their Creation stories, law and way of life; some Tjukurpa knowledge is restricted, and the Aṉangu ask that certain parts of Uluṟu not be photographed.",
+    source: {
+      name: "Parks Australia / Wikipedia — Uluru",
+      url: "https://en.wikipedia.org/wiki/Uluru",
+    },
+  },
+  {
+    text: "Aṉangu mostly speak Pitjantjatjara and Yankunytjatjara, dialects of the Western Desert language, and few speak English as a first language.",
+    source: {
+      name: "Parks Australia — Uluṟu-Kata Tjuṯa National Park: Language",
+      url: "https://uluru.gov.au/discover/culture/language/",
+    },
+  },
+  {
+    text: "On 26 October 1985 the Australian government handed ownership of Uluṟu back to its Traditional Owners, who lease it back for joint management as a national park.",
+    source: {
+      name: "Wikipedia — Uluru",
+      url: "https://en.wikipedia.org/wiki/Uluru",
+    },
+  },
+  {
+    text: "After a unanimous park-board vote in 2017, climbing Uluṟu was prohibited from 26 October 2019 — the 34th anniversary of the handback.",
+    source: {
+      name: "Wikipedia — Uluru",
+      url: "https://en.wikipedia.org/wiki/Uluru",
+    },
+  },
+];
+
+const ANANGU_PEOPLE: NotablePerson[] = [
+  {
+    name: "Yami Lester",
+    lifespan: "1941–2017",
+    role: "Yankunytjatjara activist",
+    bio: "Blinded as a child by fallout from British nuclear tests at Emu Field, he became a leading Indigenous rights and anti-nuclear campaigner.",
+    source: {
+      name: "Wikipedia — Yami Lester",
+      url: "https://en.wikipedia.org/wiki/Yami_Lester",
+    },
+  },
+  {
+    name: "Rene Kulitja",
+    lifespan: "b. 1958",
+    role: "Pitjantjatjara artist & advocate",
+    bio: "An artist working across paint, glass and ceramics — best known for the 'Yananyi Dreaming' design on a Qantas 737 — and a community advocate in Central Australia.",
+    source: {
+      name: "Wikipedia — Rene Kulitja",
+      url: "https://en.wikipedia.org/wiki/Rene_Kulitja",
+    },
+  },
+  {
+    name: "Nyurpaya Kaika Burton",
+    lifespan: "b. 1949",
+    role: "Pitjantjatjara/Yankunytjatjara artist & educator",
+    bio: "A multidisciplinary artist and educator from the APY Lands whose practice spans painting, weaving and installation, and who advocates for ethical dealing with Indigenous artists.",
+    source: {
+      name: "Wikipedia — Nyurpaya Kaika Burton",
+      url: "https://en.wikipedia.org/wiki/Nyurpaya_Kaika_Burton",
+    },
+  },
+];
 
 export const localityInfoBySlug: Record<string, LocalityInfo> = {
   // Arrernte — Mparntwe (Alice Springs) & Central Australia
@@ -120,6 +199,271 @@ export const localityInfoBySlug: Record<string, LocalityInfo> = {
         },
       },
     ],
+  },
+
+  // Larrakia — Garramilla (Darwin)
+  larrakia: {
+    keyFacts: [
+      {
+        text: "The Larrakia are the Traditional Owners of the Darwin region and call themselves the 'Saltwater People' for their close relationship with the sea.",
+        source: {
+          name: "Wikipedia — Larrakia people",
+          url: "https://en.wikipedia.org/wiki/Larrakia_people",
+        },
+      },
+      {
+        text: "Garramilla is the Larrakia name for Darwin, meaning 'white rock' after the white stone cliffs around the city's harbour and beaches.",
+        source: {
+          name: "Larrakia Nation Aboriginal Corporation",
+          url: "https://larrakia.com/about/the-larrakia-people/",
+        },
+      },
+      {
+        text: "The Larrakia language, Gulumirrgin, is critically endangered — only 41 people reported knowledge of it in the 2021 census — and revitalisation work is under way.",
+        source: {
+          name: "Wikipedia — Laragiya language",
+          url: "https://en.wikipedia.org/wiki/Laragiya_language",
+        },
+      },
+      {
+        text: "Larrakia Country runs from the Cox Peninsula in the west to Gunn Point in the north, the Adelaide River in the east and down to the Manton Dam area in the south.",
+        source: {
+          name: "Larrakia Nation Aboriginal Corporation",
+          url: "https://larrakia.com/about/the-larrakia-people/",
+        },
+      },
+      {
+        text: "The 1972 Larrakia Petition was an early assertion of land rights that led to a hard-fought land claim, with land formally returned to the Larrakia in 2016.",
+        source: {
+          name: "Wikipedia — Larrakia people",
+          url: "https://en.wikipedia.org/wiki/Larrakia_people",
+        },
+      },
+    ],
+    notablePeople: [
+      {
+        name: "Miranda Tapsell",
+        lifespan: "b. 1987",
+        role: "Larrakia actress and writer",
+        bio: "Best known for the film The Sapphires and the TV series Love Child, for which she won two Logie Awards in 2015.",
+        source: {
+          name: "Wikipedia — Miranda Tapsell",
+          url: "https://en.wikipedia.org/wiki/Miranda_Tapsell",
+        },
+      },
+      {
+        name: "Bobby Secretary",
+        lifespan: "1929–1984",
+        role: "Larrakia elder & land-rights activist",
+        bio: "A Danggalaba clan elder who organised the 1972 Larrakia Petition and led the Gwalwa Daraniki ('Our Land') movement to secure Kulaluk in Darwin.",
+        source: {
+          name: "Wikipedia — Bobby Secretary",
+          url: "https://en.wikipedia.org/wiki/Bobby_Secretary",
+        },
+      },
+      {
+        name: "Richard Fejo",
+        role: "Larrakia elder & cultural educator",
+        bio: "A senior Larrakia elder from Darwin who performs Welcome to Country ceremonies and works as a cultural educator, musician and comedian.",
+        source: {
+          name: "Wikipedia — Richard Fejo",
+          url: "https://en.wikipedia.org/wiki/Richard_Fejo",
+        },
+      },
+    ],
+  },
+
+  // Yolŋu — northeast Arnhem Land (Nhulunbuy, Yirrkala)
+  yolngu: {
+    keyFacts: [
+      {
+        text: "The Yolŋu are an aggregation of Aboriginal peoples of northeast Arnhem Land, and the word 'Yolŋu' means 'person' in their languages.",
+        source: {
+          name: "Wikipedia — Yolngu",
+          url: "https://en.wikipedia.org/wiki/Yolngu",
+        },
+      },
+      {
+        text: "Yolŋu speak Yolŋu Matha ('the Yolŋu tongue'), a family of about a dozen related languages and some thirty clan varieties.",
+        source: {
+          name: "Wikipedia — Yolŋu languages",
+          url: "https://en.wikipedia.org/wiki/Yol%C5%8Bu_languages",
+        },
+      },
+      {
+        text: "Every Yolŋu person, clan and element of the natural world belongs to one of two intermarrying moieties — Dhuwa or Yirritja — which structure kinship, land, ceremony and art.",
+        source: {
+          name: "Wikipedia — Yolngu",
+          url: "https://en.wikipedia.org/wiki/Yolngu",
+        },
+      },
+      {
+        text: "In 1963 Yolŋu at Yirrkala sent Parliament two petitions mounted on decorated bark — the Yirrkala Bark Petitions — protesting bauxite mining; they remain displayed in Parliament House as founding documents of the land rights movement.",
+        source: {
+          name: "Wikipedia — Yolngu",
+          url: "https://en.wikipedia.org/wiki/Yolngu",
+        },
+      },
+      {
+        text: "The 1971 Milirrpum v Nabalco ('Gove land rights') case helped pave the way to the Aboriginal Land Rights (Northern Territory) Act 1976.",
+        source: {
+          name: "Wikipedia — Yolngu",
+          url: "https://en.wikipedia.org/wiki/Yolngu",
+        },
+      },
+      {
+        text: "Yolŋu are internationally renowned for their art, including fine cross-hatched (rarrk) bark paintings, hollow-log memorial poles and weaving tied to ancestral songlines.",
+        source: {
+          name: "Wikipedia — Yolngu",
+          url: "https://en.wikipedia.org/wiki/Yolngu",
+        },
+      },
+    ],
+    notablePeople: [
+      {
+        name: "Dr G. Yunupingu (Gurrumul)",
+        lifespan: "1971–2017",
+        role: "Gumatj singer & multi-instrumentalist",
+        bio: "A blind Gumatj musician who became the most commercially successful Indigenous Australian artist of his era, singing in Yolŋu languages and English.",
+        source: {
+          name: "Wikipedia — Geoffrey Gurrumul Yunupingu",
+          url: "https://en.wikipedia.org/wiki/Geoffrey_Gurrumul_Yunupingu",
+        },
+      },
+      {
+        name: "Galarrwuy Yunupingu",
+        lifespan: "1948–2023",
+        role: "Gumatj leader & land-rights activist",
+        bio: "Central to the bark petitions and the land rights movement; named Australian of the Year in 1978.",
+        source: {
+          name: "Wikipedia — Galarrwuy Yunupingu",
+          url: "https://en.wikipedia.org/wiki/Galarrwuy_Yunupingu",
+        },
+      },
+      {
+        name: "Mandawuy Yunupingu",
+        lifespan: "1956–2013",
+        role: "Educator & Yothu Yindi frontman",
+        bio: "A Gumatj teacher and musician who fronted the band Yothu Yindi, championed bilingual 'both-ways' education, and was Australian of the Year in 1992.",
+        source: {
+          name: "Wikipedia — Mandawuy Yunupingu",
+          url: "https://en.wikipedia.org/wiki/Mandawuy_Yunupingu",
+        },
+      },
+      {
+        name: "Gawirriṉ Gumana",
+        lifespan: "c. 1935–2016",
+        role: "Cultural leader & bark painter",
+        bio: "A senior Yolŋu cultural leader renowned for his rarrk bark paintings and as the last surviving painter of the 1962 Yirrkala Church Panels.",
+        source: {
+          name: "Wikipedia — Gawirrin Gumana",
+          url: "https://en.wikipedia.org/wiki/Gawirrin_Gumana",
+        },
+      },
+      {
+        name: "Witiyana Marika",
+        lifespan: "b. 1961",
+        role: "Rirratjiŋu elder, musician & filmmaker",
+        bio: "A founding member of Yothu Yindi and a producer on the film High Ground.",
+        source: {
+          name: "Wikipedia — Witiyana Marika",
+          url: "https://en.wikipedia.org/wiki/Witiyana_Marika",
+        },
+      },
+    ],
+  },
+
+  // Tiwi — Tiwi Islands (Bathurst & Melville)
+  tiwi: {
+    keyFacts: [
+      {
+        text: "The Tiwi (also called Tunuvivi) are an Aboriginal people of nearly 2,000 who live on the Tiwi Islands in the Northern Territory.",
+        source: {
+          name: "Wikipedia — Tiwi people",
+          url: "https://en.wikipedia.org/wiki/Tiwi_people",
+        },
+      },
+      {
+        text: "The Tiwi Islands comprise principally Bathurst and Melville Islands, in the Timor Sea to the north of Darwin.",
+        source: {
+          name: "Wikipedia — Tiwi people",
+          url: "https://en.wikipedia.org/wiki/Tiwi_people",
+        },
+      },
+      {
+        text: "The Tiwi language is a linguistic isolate — with no apparent link to Arnhem Land or other mainland languages — and is one of the most polysynthetic of Australian languages.",
+        source: {
+          name: "Wikipedia — Tiwi language",
+          url: "https://en.wikipedia.org/wiki/Tiwi_language",
+        },
+      },
+      {
+        text: "Tiwi visual culture is renowned for pukumani mortuary poles (tutini) carved for funerals and for the geometric ochre designs (jilamara) produced at island art centres.",
+        source: {
+          name: "Jilamara Arts and Crafts Association",
+          url: "https://jilamara.com/history/",
+        },
+      },
+      {
+        text: "Australian rules football (yiloga) is central to Tiwi life, with the Tiwi Islands Football League grand final drawing crowds of up to about 3,000 people.",
+        source: {
+          name: "Wikipedia — Tiwi people",
+          url: "https://en.wikipedia.org/wiki/Tiwi_people",
+        },
+      },
+    ],
+    notablePeople: [
+      {
+        name: "Cyril Rioli",
+        lifespan: "b. 1989",
+        role: "Australian rules footballer",
+        bio: "A Tiwi Islander of the celebrated Rioli football family who won four AFL premierships and a Norm Smith Medal with Hawthorn.",
+        source: {
+          name: "Wikipedia — Cyril Rioli",
+          url: "https://en.wikipedia.org/wiki/Cyril_Rioli",
+        },
+      },
+      {
+        name: "David Kantilla",
+        lifespan: "1938–1978",
+        role: "Australian rules footballer",
+        bio: "The first Indigenous Australian to play in the SANFL, playing 113 games for South Adelaide in the 1960s.",
+        source: {
+          name: "Wikipedia — David Kantilla",
+          url: "https://en.wikipedia.org/wiki/David_Kantilla",
+        },
+      },
+      {
+        name: "Kitty Kantilla",
+        lifespan: "c. 1928–2003",
+        role: "Tiwi artist",
+        bio: "One of the most acclaimed Tiwi artists of her generation and a founding member of Jilamara Arts, known for ochre works in traditional geometric designs.",
+        source: {
+          name: "National Portrait Gallery — Kitty Kantilla",
+          url: "https://portrait.gov.au/people/kitty-kantilla-1928",
+        },
+      },
+      {
+        name: "Maurice Rioli",
+        lifespan: "1957–2010",
+        role: "Footballer & politician",
+        bio: "A star of the VFL/AFL with Richmond and later a Northern Territory MP, from the Rioli football family.",
+        source: {
+          name: "Wikipedia — Maurice Rioli",
+          url: "https://en.wikipedia.org/wiki/Maurice_Rioli",
+        },
+      },
+    ],
+  },
+
+  // Aṉangu — Pitjantjatjara / Yankunytjatjara (Uluṟu-Kata Tjuṯa)
+  pitjantjatjara: {
+    keyFacts: ANANGU_FACTS,
+    notablePeople: ANANGU_PEOPLE,
+  },
+  yankunytjatjara: {
+    keyFacts: ANANGU_FACTS,
+    notablePeople: ANANGU_PEOPLE,
   },
 };
 

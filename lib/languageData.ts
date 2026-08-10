@@ -173,6 +173,132 @@ export const languageWordsBySlug: Record<string, LanguageWords> = {
     ],
   },
 
+  // Larrakia / Garramilla (Darwin) — "Saltwater People"
+  // Gulumirrgin (Larrakia) is critically endangered; no widely shared everyday
+  // greeting was found in credible sources, so none is invented here.
+  larrakia: {
+    extraPhrases: [
+      { label: "Our land", word: "Gwalwa Daraniki" },
+      { label: "Water", word: "Garuwa" },
+      { label: "Fire", word: "Gujuguwa" },
+      { label: "Saltwater", word: "Gunumijtanda" },
+      { label: "Sand", word: "Gama" },
+      { label: "Mother", word: "Algan" },
+      { label: "Father", word: "Nigan" },
+    ],
+    source: "Wikipedia (Larrakia / Laragiya); CSIRO Gulumoerrgin calendar",
+    sources: [
+      {
+        name: "Wikipedia — Laragiya language",
+        url: "https://en.wikipedia.org/wiki/Laragiya_language",
+      },
+      {
+        name: "Wikipedia — Larrakia people",
+        url: "https://en.wikipedia.org/wiki/Larrakia_people",
+      },
+      {
+        name: "CSIRO — Gulumoerrgin (Larrakia) seasons calendar",
+        url: "https://www.csiro.au/en/research/indigenous-science/indigenous-knowledge/calendars/gulumoerrgin",
+      },
+    ],
+  },
+
+  // Yolŋu / northeast Arnhem Land (Nhulunbuy, Yirrkala)
+  // Yolŋu Matha is a family of related clan languages; forms below are widely
+  // shared greetings. Spelling and use vary by clan and dialect.
+  yolngu: {
+    hello: "Nhämirri nhe?",
+    country: "Wäŋa",
+    countryPhonetic: "waa-nga",
+    extraPhrases: [
+      { label: "Good / OK", word: "Manymak", phonetic: "main-muck" },
+      { label: "Water (fresh)", word: "Gapu" },
+      { label: "Welcome", word: "Märr-ŋamathirri" },
+      { label: "Goodbye", word: "Bubu" },
+    ],
+    source: "Yolŋu Matha — GPSA language resource; Omniglot",
+    sources: [
+      {
+        name: "GPSA — Languages of the First Nations Peoples of Australia (Yolŋu Matha)",
+        url: "https://gpsa.org.au/our-resources/supervision-support/languages-of-the-first-nations-peoples-of-australia/",
+      },
+      {
+        name: "Omniglot — Useful phrases in Yolŋu",
+        url: "https://www.omniglot.com/language/phrases/yolngu.htm",
+      },
+    ],
+  },
+
+  // Tiwi / Tiwi Islands (Bathurst & Melville) — Tiwi is a language isolate.
+  // No widely shared everyday greeting was found in credible sources.
+  tiwi: {
+    country: "Murrakupuni",
+    extraPhrases: [
+      { label: "Water", word: "Kukuni" },
+      { label: "Fire", word: "Yikwani" },
+      { label: "Sun", word: "Yiminga" },
+      { label: "Moon", word: "Taparra" },
+    ],
+    source: "Wikipedia (Tiwi language); AIATSIS AustLang N20",
+    sources: [
+      {
+        name: "Wikipedia — Tiwi language",
+        url: "https://en.wikipedia.org/wiki/Tiwi_language",
+      },
+      {
+        name: "AIATSIS AustLang — Tiwi (N20)",
+        url: "https://aiatsis.gov.au/austlang/language/n20",
+      },
+    ],
+  },
+
+  // Aṉangu — Pitjantjatjara / Yankunytjatjara (Uluṟu-Kata Tjuṯa, Western Desert)
+  pitjantjatjara: {
+    hello: "Palya",
+    country: "Ngura",
+    extraPhrases: [
+      { label: "Yes", word: "Uwa" },
+      { label: "No / don't", word: "Wiya" },
+      { label: "Water", word: "Kapi" },
+      { label: "Food (from plants)", word: "Mai" },
+      { label: "Law / Dreaming", word: "Tjukurpa" },
+    ],
+    source: "Pitjantjatjara (Western Desert) — Parks Australia; Maṟuku Arts",
+    sources: [
+      {
+        name: "Parks Australia — Uluṟu-Kata Tjuṯa National Park: Language",
+        url: "https://uluru.gov.au/discover/culture/language/",
+      },
+      {
+        name: "Maṟuku Arts — Glossary",
+        url: "https://maruku.com.au/about/glossary/",
+      },
+    ],
+  },
+  // Yankunytjatjara shares the Western Desert language with Pitjantjatjara
+  yankunytjatjara: {
+    hello: "Palya",
+    country: "Ngura",
+    extraPhrases: [
+      { label: "Yes", word: "Uwa" },
+      { label: "No / don't", word: "Wiya" },
+      { label: "Water", word: "Kapi" },
+      { label: "Food (from plants)", word: "Mai" },
+      { label: "Law / Dreaming", word: "Tjukurpa" },
+    ],
+    source: "Pitjantjatjara / Yankunytjatjara (Western Desert) — Parks Australia; Maṟuku Arts",
+    sources: [
+      {
+        name: "Parks Australia — Uluṟu-Kata Tjuṯa National Park: Language",
+        url: "https://uluru.gov.au/discover/culture/language/",
+      },
+      {
+        name: "Maṟuku Arts — Glossary",
+        url: "https://maruku.com.au/about/glossary/",
+      },
+    ],
+  },
+
   // --- AOTEAROA NEW ZEALAND ---
   // Māori is a single language shared across iwi with some dialectal variation.
   // Basic greetings are widely used and publicly shared with community blessing.
