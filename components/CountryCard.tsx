@@ -177,6 +177,11 @@ export default function CountryCard({
                         />
                       ))}
                     </div>
+                    {words.note && (
+                      <p className="text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-lg p-2.5 mt-3 leading-relaxed">
+                        {words.note}
+                      </p>
+                    )}
                     <SourceLine sources={words.sources} fallback={words.source} />
                   </>
                 ) : (

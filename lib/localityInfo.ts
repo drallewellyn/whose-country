@@ -93,6 +93,102 @@ const ANANGU_PEOPLE: NotablePerson[] = [
   },
 ];
 
+// Palawa / Pakana content shared across the Tasmanian band slugs.
+const PALAWA_FACTS: KeyFact[] = [
+  {
+    text: "The Aboriginal people of Tasmania are known as Palawa or Pakana, and call the island lutruwita in the revived palawa kani language.",
+    source: {
+      name: "Wikipedia — Palawa kani",
+      url: "https://en.wikipedia.org/wiki/Palawa_kani",
+    },
+  },
+  {
+    text: "Aboriginal people have lived in what is now Tasmania since the late Pleistocene, with evidence of occupation from at least around 35,000 years ago — one of the world's longest continuous cultures.",
+    source: {
+      name: "Wikipedia — Aboriginal Tasmanians",
+      url: "https://en.wikipedia.org/wiki/Aboriginal_Tasmanians",
+    },
+  },
+  {
+    text: "Rising seas flooded Bass Strait around 8,000 years ago, isolating Tasmanian Aboriginal communities from mainland Australia for roughly 8,000 years.",
+    source: {
+      name: "Wikipedia — Aboriginal Tasmanians",
+      url: "https://en.wikipedia.org/wiki/Aboriginal_Tasmanians",
+    },
+  },
+  {
+    text: "The Black War of the late 1820s–early 1830s brought frontier violence and forced removal, but the Palawa/Pakana community survived and continues today — the colonial 'extinction' narrative is false.",
+    source: {
+      name: "Wikipedia — Aboriginal Tasmanians",
+      url: "https://en.wikipedia.org/wiki/Aboriginal_Tasmanians",
+    },
+  },
+  {
+    text: "palawa kani is a revived Tasmanian Aboriginal language reconstructed by the Tasmanian Aboriginal Centre from historical wordlists and the recorded speech and songs of Fanny Cochrane Smith.",
+    source: {
+      name: "Tasmanian Aboriginal Centre — palawa kani",
+      url: "https://tacinc.com.au/programs/palawa-kani/",
+    },
+  },
+  {
+    text: "Tasmania's Aboriginal and Dual Naming Policy has restored palawa kani names such as nipaluna/Hobart, kunanyi/Mt Wellington, kanamaluka/River Tamar and takayna/The Tarkine as official names.",
+    source: {
+      name: "Tasmanian Aboriginal Centre — Aboriginal and Dual Names",
+      url: "https://tacinc.com.au/programs/palawa-kani/aboriginal-and-dual-names/",
+    },
+  },
+  {
+    text: "Land has been returned to the Aboriginal community, including truwana/Cape Barren Island (2005) and putalina/Oyster Cove, sites of ongoing cultural continuity.",
+    source: {
+      name: "Tasmanian Aboriginal Centre — Aboriginal and Dual Names",
+      url: "https://tacinc.com.au/programs/palawa-kani/aboriginal-and-dual-names/",
+    },
+  },
+];
+
+const PALAWA_PEOPLE: NotablePerson[] = [
+  {
+    name: "Fanny Cochrane Smith",
+    lifespan: "1834–1905",
+    role: "Language holder & singer",
+    bio: "Born at the Wybalenna mission, her 1899–1903 wax-cylinder recordings are the only sound records of an original Tasmanian Aboriginal language and now underpin the palawa kani revival.",
+    source: {
+      name: "Wikipedia — Fanny Cochrane Smith",
+      url: "https://en.wikipedia.org/wiki/Fanny_Cochrane_Smith",
+    },
+  },
+  {
+    name: "Truganini",
+    lifespan: "c. 1812–1876",
+    role: "Nuenonne woman & survivor of the colonial era",
+    bio: "A Nuenonne woman from the Bruny Island area who lived through the invasion and removal of her people; long, but wrongly, called the 'last' Tasmanian Aborigine — the Palawa community survives and continues today.",
+    source: {
+      name: "Wikipedia — Truganini",
+      url: "https://en.wikipedia.org/wiki/Truganini",
+    },
+  },
+  {
+    name: "Michael Mansell",
+    lifespan: "b. 1951",
+    role: "Palawa lawyer & land-rights advocate",
+    bio: "A Trawlwoolway man from Launceston, longtime legal director of the Tasmanian Aboriginal Centre and founder of the Aboriginal Provisional Government, central to Tasmanian land rights.",
+    source: {
+      name: "Wikipedia — Michael Mansell",
+      url: "https://en.wikipedia.org/wiki/Michael_Mansell",
+    },
+  },
+  {
+    name: "Aunty Ida West AM",
+    lifespan: "1919–2003",
+    role: "Palawa elder & reconciliation advocate",
+    bio: "Born on Cape Barren Island, a president of the Tasmanian Aboriginal Centre who campaigned for health services, land rights and reconciliation, and authored 'Pride Against Prejudice'.",
+    source: {
+      name: "Wikipedia — Ida West",
+      url: "https://en.wikipedia.org/wiki/Ida_West",
+    },
+  },
+];
+
 export const localityInfoBySlug: Record<string, LocalityInfo> = {
   // Arrernte — Mparntwe (Alice Springs) & Central Australia
   arrernte: {
@@ -465,6 +561,86 @@ export const localityInfoBySlug: Record<string, LocalityInfo> = {
     keyFacts: ANANGU_FACTS,
     notablePeople: ANANGU_PEOPLE,
   },
+
+  // Awabakal — Mulubinba (Newcastle) & Awaba (Lake Macquarie)
+  awabakal: {
+    keyFacts: [
+      {
+        text: "The Awabakal are an Aboriginal people of coastal mid-north New South Wales whose Country centres on Newcastle and Lake Macquarie, with the Wonnarua, Worimi and Darkinung as neighbours.",
+        source: {
+          name: "Wikipedia — Awabakal",
+          url: "https://en.wikipedia.org/wiki/Awabakal",
+        },
+      },
+      {
+        text: "The name 'Awabakal' means the people of Awaba, the Aboriginal name for Lake Macquarie meaning a 'flat or plain surface'.",
+        source: {
+          name: "Wikipedia — Awabakal",
+          url: "https://en.wikipedia.org/wiki/Awabakal",
+        },
+      },
+      {
+        text: "Newcastle's Aboriginal name is Mulubinba, meaning 'place of sea ferns', after an edible fern (mulubin) that grew in the area.",
+        source: {
+          name: "University of Newcastle — Mulubinba: Place of Sea Ferns",
+          url: "https://uoncc.wordpress.com/2015/04/30/mulubinba-place-of-sea-ferns/",
+        },
+      },
+      {
+        text: "Much of what is known of the Awabakal language was recorded from the 1820s–1850s by missionary Rev. Lancelot Threlkeld working closely with the Awabakal leader Biraban — one of the earliest systematic records of any Australian Aboriginal language.",
+        source: {
+          name: "Wikipedia — Awabakal language",
+          url: "https://en.wikipedia.org/wiki/Awabakal_language",
+        },
+      },
+      {
+        text: "Awabakal ceased to be spoken as a first language by the late 1800s and is now in early revival, with community-led reconstruction by the Arwarbukarl Cultural Resource Association (Miromaa Aboriginal Language and Technology Centre).",
+        source: {
+          name: "Wikipedia — Awabakal language",
+          url: "https://en.wikipedia.org/wiki/Awabakal_language",
+        },
+      },
+      {
+        text: "The Awabakal Local Aboriginal Land Council, established in 1985 and based in Newcastle, represents Aboriginal people in the area south of the Hunter River.",
+        source: {
+          name: "Wikipedia — Awabakal Local Aboriginal Land Council",
+          url: "https://en.wikipedia.org/wiki/Awabakal_Local_Aboriginal_Land_Council",
+        },
+      },
+    ],
+    notablePeople: [
+      {
+        name: "Biraban (We-pohng)",
+        lifespan: "c. 1800–1846",
+        role: "Awabakal leader, interpreter & language teacher",
+        bio: "Born near Mulubinba (Newcastle), he became a recognised leader of the Awabakal and, from about 1825, the principal collaborator who enabled Rev. Lancelot Threlkeld to record the Awabakal language.",
+        source: {
+          name: "Wikipedia — Biraban",
+          url: "https://en.wikipedia.org/wiki/Biraban",
+        },
+      },
+      {
+        name: "Ti-pah-mah-ah (Patty)",
+        lifespan: "died before 1846",
+        role: "Awabakal woman; wife of Biraban",
+        bio: "Recorded by Threlkeld as 'Patty', she was the wife of Biraban and among the few named Awabakal individuals documented in the nineteenth-century records.",
+        source: {
+          name: "Wikipedia — Biraban",
+          url: "https://en.wikipedia.org/wiki/Biraban",
+        },
+      },
+    ],
+  },
+
+  // Palawa / Pakana — lutruwita (Tasmania), aliased across band slugs
+  palawa: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
+  nuenonne: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
+  mouheneenner: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
+  paredarerme: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
+  pyemmairrener: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
+  tommeginne: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
+  leterremairrener: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
+  melukerdee: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
 };
 
 export function getLocalityInfo(slug: string): LocalityInfo | undefined {

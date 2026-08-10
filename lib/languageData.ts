@@ -15,8 +15,43 @@
 
 import type { LanguageWords } from "@/types";
 
+// palawa kani (revived Tasmanian Aboriginal language) — community-controlled by
+// the Tasmanian Aboriginal Centre. Only published names / officially released
+// words are shown, with a permission note. Shared across Tasmanian band slugs.
+const palawaWords: LanguageWords = {
+  hello: "ya pulingina",
+  country: "milaythina",
+  extraPhrases: [
+    { label: "Tasmania", word: "lutruwita" },
+    { label: "Person / people", word: "palawa / pakana" },
+  ],
+  note: "palawa kani is a revived language community-controlled by the Tasmanian Aboriginal Centre. Its use is subject to community permission and protocols; only published names and officially released words are shown here.",
+  source: "Tasmanian Aboriginal Centre; Wikipedia — Palawa kani",
+  sources: [
+    {
+      name: "Tasmanian Aboriginal Centre — palawa kani",
+      url: "https://tacinc.com.au/programs/palawa-kani/",
+    },
+    {
+      name: "Wikipedia — Palawa kani",
+      url: "https://en.wikipedia.org/wiki/Palawa_kani",
+    },
+  ],
+};
+
 // Keyed by native-land.ca territory slug
 export const languageWordsBySlug: Record<string, LanguageWords> = {
+
+  // Palawa / Pakana — lutruwita (Tasmania). Aliased across band slugs because
+  // native-land.ca subdivides Tasmania into many band territories.
+  palawa: palawaWords,
+  nuenonne: palawaWords,
+  mouheneenner: palawaWords,
+  paredarerme: palawaWords,
+  pyemmairrener: palawaWords,
+  tommeginne: palawaWords,
+  leterremairrener: palawaWords,
+  melukerdee: palawaWords,
 
   // --- AUSTRALIA ---
 
@@ -42,15 +77,30 @@ export const languageWordsBySlug: Record<string, LanguageWords> = {
     source: "Placeholder — requires community review",
   },
 
-  // Awabakal / Newcastle & Lake Macquarie
+  // Awabakal / Newcastle (Mulubinba) & Lake Macquarie (Awaba)
+  // Awabakal is a sleeping language in revival; words are reconstructed from
+  // Rev. Lancelot Threlkeld's 1820s–1850s records (made with Biraban). No
+  // verified everyday greeting exists, so none is invented.
   awabakal: {
-    hello: "Koba",
-    helloPhonetic: "Koh-bah",
-    goodbye: "Yarama",
-    goodbyePhonetic: "Yah-rah-mah",
-    country: "Mulubinba",
-    countryPhonetic: "Moo-loo-bin-bah",
-    source: "Placeholder — requires community review",
+    extraPhrases: [
+      { label: "One", word: "Wakool" },
+      { label: "Two", word: "Bulowara" },
+      { label: "Three", word: "Ngoro" },
+      { label: "Eaglehawk (origin of the name Biraban)", word: "Biraban" },
+      { label: "Nobbys Headland, Newcastle", word: "Whibayganba" },
+    ],
+    note: "Awabakal is a sleeping language being revived; these words are reconstructed from Rev. Threlkeld's 1800s records. For authoritative language, see the Miromaa Aboriginal Language & Technology Centre.",
+    source: "Wikipedia (Awabakal language, from Threlkeld's records); Common Ground",
+    sources: [
+      {
+        name: "Wikipedia — Awabakal language",
+        url: "https://en.wikipedia.org/wiki/Awabakal_language",
+      },
+      {
+        name: "Common Ground — Birabahn",
+        url: "https://www.commonground.org.au/article/birabahn",
+      },
+    ],
   },
 
   // Wurundjeri / Melbourne region

@@ -43,6 +43,8 @@ export interface LanguageWords {
   countryPhonetic?: string;
   /** Extra phrases rendered below the four basic word tiles. */
   extraPhrases?: LanguagePhrase[];
+  /** Optional caveat shown prominently (e.g. community-controlled language). */
+  note?: string;
   /** Free-text credit (kept for backward compatibility). */
   source?: string;
   /** Structured, linkable sources — always credit where words came from. */
