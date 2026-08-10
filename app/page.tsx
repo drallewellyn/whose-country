@@ -6,6 +6,7 @@ import LocationSearch from "@/components/LocationSearch";
 import CountryCard from "@/components/CountryCard";
 import AcknowledgementGuide from "@/components/AcknowledgementGuide";
 import CountryMapDynamic from "@/components/CountryMapDynamic";
+import FrontierHistory from "@/components/FrontierHistory";
 import type { NativeLandFeature } from "@/types";
 
 interface CountryData {
@@ -172,6 +173,9 @@ export default function Home() {
                 countryName={primaryTerritory.properties.Name}
               />
             )}
+
+            {/* Frontier massacre history — Australian locations only */}
+            {!isNZ && <FrontierHistory lat={coords.lat} lng={coords.lng} />}
 
             <div className="bg-stone-100 rounded-2xl p-4 text-sm text-stone-600 space-y-1">
               <p className="font-medium text-stone-700">Want to go further?</p>

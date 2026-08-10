@@ -82,6 +82,19 @@ export interface TerritoryInfo {
   organisations?: { name: string; url: string }[];
 }
 
+/** A frontier-massacre site from the Colonial Frontier Massacres dataset. */
+export interface MassacreSite {
+  id: string;
+  name: string;
+  date: string; // human-readable date range, e.g. "Between 1839-02-01 and 1839-02-28"
+  year: number | null;
+  victims: string; // e.g. "Aboriginal people attacked by Colonists"
+  victimDead: number;
+  attackerDead: number;
+  languageGroup: string;
+  distanceKm: number;
+}
+
 export type AcknowledgementContext =
   | "formal-event"
   | "meeting"
