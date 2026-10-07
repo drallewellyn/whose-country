@@ -680,7 +680,7 @@ export const localityInfoBySlug: Record<string, LocalityInfo> = {
       {
         name: "Ivaritji (Amelia Taylor)",
         lifespan: "c. 1849–1929",
-        role: "Last known first-language speaker of Kaurna",
+        role: "Last known speaker of Kaurna",
         bio: "Born at Port Adelaide, daughter of the Kaurna leader Ityamai-itpina. Her interviews with Daisy Bates and Norman Tindale later helped the language revival, and Whitmore Square was dual-named in her honour in 2003.",
         source: { name: "Wikipedia — Ivaritji", url: "https://en.wikipedia.org/wiki/Ivaritji" },
       },
