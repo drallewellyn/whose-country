@@ -126,16 +126,168 @@ export const languageWordsBySlug: Record<string, LanguageWords> = {
   },
 
   // Kaurna / Adelaide region
+  // Corrected Oct 2026: the earlier placeholder had "Tandanya" (a place name,
+  // not goodbye) and "Yunga" (unsourced) — see sources below.
   kaurna: {
-    hello: "Naa marni",
-    helloPhonetic: "Nah mar-nee",
-    goodbye: "Tandanya",
-    goodbyePhonetic: "Tan-dan-ya",
-    thankyou: "Yunga",
-    thankyouPhonetic: "Yung-ah",
+    hello: "Niina marni",
+    goodbye: "Nakutha",
+    thankyou: "Ngaityalya",
     country: "Yarta",
-    countryPhonetic: "Yar-tah",
-    source: "Placeholder — requires community review",
+    extraPhrases: [
+      { label: "Hello, how are you? (to a group)", word: "Naa marni" },
+      { label: "Good you all came (welcome)", word: "Marni naa pudni" },
+      { label: "Where are you going? (often a greeting)", word: "Wanti niina?" },
+      { label: "Kaurna Country", word: "Kaurna Yarta" },
+    ],
+    note: "Kaurna is a reclaimed language. 'Niina marni' literally asks 'are you good?'; 'Nakutha' means 'see you soon'. Kaurna Warra Karrpanthi (KWK) handles requests for Kaurna names and translations — confirm with KWK before public use.",
+    source: "SA Museum; University of Adelaide; Kaurna Placenames; Australia Day Council",
+    sources: [
+      {
+        name: "SA Museum — Young Explorers (Niina marni, Ngaityalya)",
+        url: "https://www.samuseum.sa.gov.au/visit/families-educators/NRW/young-explorers",
+      },
+      {
+        name: "SA Museum — Wangayarta (yarta = land, country)",
+        url: "https://samuseum.sa.gov.au/wangayarta",
+      },
+      {
+        name: "kra.org.au — Nakutha, Ngaityalya",
+        url: "https://www.kra.org.au/?p=1068",
+      },
+      {
+        name: "University of Adelaide — Marni naa pudni",
+        url: "https://www.adelaide.edu.au/library/about-the-library/marni-naa-pudni",
+      },
+      {
+        name: "Australia Day Council — Say hello in local language",
+        url: "https://dosomethingaustralian.australiaday.org.au/discover/say-hello-in-local-language/",
+      },
+    ],
+  },
+
+  // Ngarrindjeri / Lower Murray, Lakes and Coorong
+  ngarrindjeri: {
+    hello: "Ngankuri nanggi",
+    goodbye: "Nakun!",
+    country: "Ruwi",
+    extraPhrases: [
+      { label: "Welcome!", word: "Nguldi arndu!" },
+      { label: "Welcome to my Country!", word: "Nguldi arndu ananyi ruwi!" },
+      { label: "River Murray", word: "Murrundi" },
+      { label: "The Coorong (long, narrow lagoon)", word: "Kurangk" },
+      { label: "Meeting place", word: "Raukkan" },
+    ],
+    note: "Greetings are from Tanganekald, the Coorong dialect of Ngarrindjeri — there is no exact word for 'hello' ('Ngankuri nanggi' = good day; 'Nakun!' = see you later). Spellings vary across dialects (Ruwi / Ruwe). No sourced word for 'thank you' was found. Confirm with the Ngarrindjeri Aboriginal Corporation before public use.",
+    source: "Mobile Language Team; SA Maritime Museum; Wikipedia",
+    sources: [
+      {
+        name: "Mobile Language Team — Tanganekald greetings",
+        url: "https://portal.mobilelanguageteam.com.au/?p=3010",
+      },
+      {
+        name: "SA Maritime Museum — Pondi, Kurri, Ngurunderi",
+        url: "https://maritime.history.sa.gov.au/events/pondi-murray-cod-kurri-river-winth-amaldi-creator/",
+      },
+      {
+        name: "Wikipedia — Coorong National Park",
+        url: "https://en.wikipedia.org/wiki/Coorong_National_Park",
+      },
+      {
+        name: "Wikipedia — Raukkan, South Australia",
+        url: "https://en.wikipedia.org/wiki/Raukkan,_South_Australia",
+      },
+    ],
+  },
+
+  // Adnyamathanha / Flinders Ranges (native-land.ca slug is spelt "andyamathanha")
+  andyamathanha: {
+    hello: "Nhangga",
+    goodbye: "Adi idla nakuty'-ina!",
+    country: "Yarta",
+    extraPhrases: [
+      { label: "How are you?", word: "Nhangga nhina?" },
+      { label: "I'm good", word: "Warndu ikand'-ai" },
+      { label: "Very good", word: "Warndu watya" },
+      { label: "Meeting place (Wilpena Pound)", word: "Ikara" },
+      { label: "The Adnyamathanha language", word: "Yura ngarwala" },
+    ],
+    note: "'Nhangga' literally means 'how' and is used as a greeting; the goodbye means 'see you soon'. An apostrophe marks a dropped sound. No sourced word for 'thank you' was found. Confirm with the Adnyamathanha Traditional Lands Association before public use.",
+    source: "Mobile Language Team; National Parks and Wildlife Service SA; Wikipedia",
+    sources: [
+      {
+        name: "Mobile Language Team — Adnyamathanha greetings",
+        url: "https://portal.mobilelanguageteam.com.au/?p=25",
+      },
+      {
+        name: "National Parks SA — Ikara-Flinders Ranges National Park",
+        url: "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park",
+      },
+      {
+        name: "Wikipedia — Adnyamathanha language",
+        url: "https://en.wikipedia.org/wiki/Adnyamathanha_language",
+      },
+    ],
+  },
+
+  // Narungga / Yorke Peninsula (native-land.ca slug is spelt "narangga")
+  narangga: {
+    hello: "Nhinni marni",
+    thankyou: "Ngayi yunggu",
+    country: "Banggara",
+    extraPhrases: [
+      { label: "Hello, how are you? (to a group)", word: "Nha marni" },
+      { label: "I'm good", word: "Marniayi" },
+      { label: "Good morning", word: "Guranna banyiwarda" },
+      { label: "Narungga Country", word: "Nharangga banggara" },
+      { label: "We welcome you", word: "Ngadlu nha marni" },
+    ],
+    note: "The Narungga language, Nharangga Warra, is being revived. No sourced word for 'goodbye' was found. These words come from a school and council/tourism sources — confirm with the Narungga Nation Aboriginal Corporation before public use.",
+    source: "Central Yorke School; Yorke Peninsula Council; Yorke Peninsula Tourism",
+    sources: [
+      {
+        name: "Central Yorke School — Nharangga Warra: saying hello",
+        url: "https://centralyorkeschool.sa.edu.au/news/2020/nharangga-warra-saying-hello/",
+      },
+      {
+        name: "Yorke Peninsula Council — Nharangga Cultural Day 2024",
+        url: "https://yorke.sa.gov.au/news/media-releases/nharangga-cultural-day-2024/",
+      },
+      {
+        name: "Yorke Peninsula Tourism",
+        url: "https://yorkepeninsula.com.au/",
+      },
+    ],
+  },
+
+  // Barngarla / Eyre Peninsula (native-land.ca slug is spelt "banggarla")
+  banggarla: {
+    country: "Yarda",
+    extraPhrases: [
+      { label: "Father", word: "Babi" },
+      { label: "Mother", word: "Ngami" },
+      { label: "Pink cockatoo", word: "Yangkunnu" },
+      { label: "Dolphin / porpoise", word: "Gadabi" },
+    ],
+    note: "Barngarla is being reclaimed from Schürmann's 1844 vocabulary, with the community and the University of Adelaide since 2011. No sourced greeting, goodbye or thank-you was found — the official Barngarla dictionary app is the best reference. Confirm with the Barngarla Determination Aboriginal Corporation before public use.",
+    source: "Wiktionary (Zuckermann et al. 2021); Wikipedia; Our Languages",
+    sources: [
+      {
+        name: "Wiktionary — yarda (citing Zuckermann, Richards & the Barngarla 2021)",
+        url: "https://en.wiktionary.org/wiki/yarda",
+      },
+      {
+        name: "Wikipedia — Barngarla people",
+        url: "https://en.wikipedia.org/wiki/Barngarla_people",
+      },
+      {
+        name: "Our Languages — The Barngarla reclamation",
+        url: "https://ourlanguages.org.au/waking-up-sleeping-beauties-aboriginal-language-revival-the-barngarla-reclamation-in-australia/",
+      },
+      {
+        name: "Barngarla dictionary app (App Store)",
+        url: "https://apps.apple.com/us/app/barngarla/id1424856161",
+      },
+    ],
   },
 
   // Turrbal / Brisbane region

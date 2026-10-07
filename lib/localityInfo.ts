@@ -641,6 +641,278 @@ export const localityInfoBySlug: Record<string, LocalityInfo> = {
   tommeginne: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
   leterremairrener: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
   melukerdee: { keyFacts: PALAWA_FACTS, notablePeople: PALAWA_PEOPLE },
+
+  // ===== South Australia (added Oct 2026) =====
+  // Keys are native-land.ca slugs, which use their own spellings:
+  // andyamathanha (Adnyamathanha), narangga (Narungga), banggarla (Barngarla).
+
+  kaurna: {
+    keyFacts: [
+      {
+        text: "Kaurna Country extends from Cape Jervis at the tip of the Fleurieu Peninsula to Port Wakefield on the eastern shore of Gulf St Vincent, and as far north as Crystal Brook.",
+        source: { name: "Wikipedia — Kaurna", url: "https://en.wikipedia.org/wiki/Kaurna" },
+      },
+      {
+        text: "The Letters Patent establishing the Province of South Australia (19 February 1836) stated that Aboriginal people's rights to the lands they occupied would not be affected, yet no treaties were made and colonists were granted Kaurna land.",
+        source: {
+          name: "Wikipedia — Letters Patent establishing the Province of South Australia",
+          url: "https://en.wikipedia.org/wiki/Letters_Patent_establishing_the_Province_of_South_Australia",
+        },
+      },
+      {
+        text: "In March 2018 the Kaurna people were recognised as native title holders over land from Myponga to Lower Light, and an Indigenous land use agreement covering metropolitan Adelaide was finalised in November 2018.",
+        source: { name: "Wikipedia — Kaurna", url: "https://en.wikipedia.org/wiki/Kaurna" },
+      },
+      {
+        text: "Kaurna is being reclaimed from around 3,000 words, a sketch grammar and hundreds of sentences recorded by German missionaries Teichelmann and Schürmann from Kaurna Elders.",
+        source: { name: "Wikipedia — Kaurna language", url: "https://en.wikipedia.org/wiki/Kaurna_language" },
+      },
+      {
+        text: "Kaurna Warra Pintyanthi ('creating Kaurna language') was founded in 2002 by Elders Lewis Yerloburka O'Brien and Alitya Wallara Rigney with linguist Rob Amery; Kaurna Warra Karrpanthi (KWK) was registered in 2013 to support the language.",
+        source: { name: "Wikipedia — Kaurna language", url: "https://en.wikipedia.org/wiki/Kaurna_language" },
+      },
+      {
+        text: "Adelaide's city centre is Tarntanya (also Tarndanya), and the River Torrens was officially dual-named Karrawirra Parri — 'red gum forest river' — in 2001.",
+        source: { name: "Wikipedia — River Torrens", url: "https://en.wikipedia.org/wiki/River_Torrens" },
+      },
+    ],
+    notablePeople: [
+      {
+        name: "Ivaritji (Amelia Taylor)",
+        lifespan: "c. 1849–1929",
+        role: "Last known first-language speaker of Kaurna",
+        bio: "Born at Port Adelaide, daughter of the Kaurna leader Ityamai-itpina. Her interviews with Daisy Bates and Norman Tindale later helped the language revival, and Whitmore Square was dual-named in her honour in 2003.",
+        source: { name: "Wikipedia — Ivaritji", url: "https://en.wikipedia.org/wiki/Ivaritji" },
+      },
+      {
+        name: "Kadlitpina ('Captain Jack')",
+        role: "Kaurna burka (Elder)",
+        bio: "One of three Kaurna Elders well known to the early colonists; he served as an honorary police constable and was painted by George French Angas. Light Square (Wauwi) is named after his wife.",
+        source: { name: "Wikipedia — Kadlitpinna", url: "https://en.wikipedia.org/wiki/Kadlitpinna" },
+      },
+      {
+        name: "Mullawirraburka ('King John')",
+        role: "Kaurna Elder",
+        bio: "His name means 'dry forest Elder'; his country, Mullawirra, lay in the Aldinga–Willunga area. More is recorded about him than any other Kaurna person of his time, and Rymill Park was dual-named Murlawirrapurka in 2003.",
+        source: { name: "Wikipedia — Mullawirraburka", url: "https://en.wikipedia.org/wiki/Mullawirraburka" },
+      },
+    ],
+  },
+
+  ngarrindjeri: {
+    keyFacts: [
+      {
+        text: "Ruwe (also Ruwi) is the Ngarrindjeri word for Country — the lands and waters of the Lower Murray, the Lakes and the Coorong.",
+        source: {
+          name: "SA Maritime Museum — Pondi, Kurri, Ngurunderi",
+          url: "https://maritime.history.sa.gov.au/events/pondi-murray-cod-kurri-river-winth-amaldi-creator/",
+        },
+      },
+      {
+        text: "In a publicly shared Ngarrindjeri story, the Ancestral Being Ngurunderi chased Pondi, the giant Murray cod, from where the Darling meets Murrundi (the River Murray).",
+        source: {
+          name: "SA Maritime Museum — Pondi, Kurri, Ngurunderi",
+          url: "https://maritime.history.sa.gov.au/events/pondi-murray-cod-kurri-river-winth-amaldi-creator/",
+        },
+      },
+      {
+        text: "Raukkan ('meeting place') began as the Point McLeay mission in 1859, was returned to the Ngarrindjeri in 1974, and is regarded as the heartland of Ngarrindjeri Country.",
+        source: { name: "Wikipedia — Raukkan", url: "https://en.wikipedia.org/wiki/Raukkan,_South_Australia" },
+      },
+      {
+        text: "In 2009 the SA Government and the Ngarrindjeri Regional Authority signed the Kungun Ngarrindjeri Yunnan Agreement ('listening to Ngarrindjeri people talking'), setting up regular negotiation on natural and cultural resources.",
+        source: {
+          name: "SA Dept for Environment and Water — KNYA Taskforce Terms of Reference",
+          url: "https://data.environment.sa.gov.au/Content/Publications/KNYA%20Taskforce%20Terms%20of%20Reference.pdf",
+        },
+      },
+      {
+        text: "A proposed bridge to Hindmarsh Island (Kumarangk) led to a 1995 Royal Commission and a 2001 Federal Court case that reached different conclusions about Ngarrindjeri women's restricted cultural knowledge; the bridge opened in 2001.",
+        source: {
+          name: "Wikipedia — Hindmarsh Island bridge controversy",
+          url: "https://en.wikipedia.org/wiki/Hindmarsh_Island_bridge_controversy",
+        },
+      },
+      {
+        text: "In December 2017 the Federal Court recognised Ngarrindjeri native title over land from around Murray Bridge south-west to Cape Jervis and south-east towards Tintinara.",
+        source: {
+          name: "Native Title Services SA — Ngarrindjeri Aboriginal Corporation",
+          url: "https://www.nativetitlesa.org/pbcs/ngarrindjeri-aboriginal-corporation-rntbc/",
+        },
+      },
+    ],
+    notablePeople: [
+      {
+        name: "David Unaipon",
+        lifespan: "1872–1967",
+        role: "Preacher, inventor and writer",
+        bio: "Born at Point McLeay (Raukkan), he patented an improved sheep-shearing handpiece in 1909 and is recognised as Australia's first published Aboriginal author. He has appeared on the $50 note since 1995.",
+        source: { name: "Wikipedia — David Unaipon", url: "https://en.wikipedia.org/wiki/David_Unaipon" },
+      },
+      {
+        name: "Veronica Brodie",
+        lifespan: "1941–2007",
+        role: "Kaurna and Ngarrindjeri community leader",
+        bio: "Born at Point McLeay, she worked in Aboriginal education, stood with the Ngarrindjeri women opposing the Hindmarsh Island bridge, and was NAIDOC SA Aboriginal Elder of the Year in 2001. Her oral history 'My Side of the Bridge' was published in 2002.",
+        source: {
+          name: "Australian Dictionary of Biography — Veronica Brodie",
+          url: "https://adb.anu.edu.au/biography/brodie-veronica-34656",
+        },
+      },
+    ],
+  },
+
+  andyamathanha: {
+    keyFacts: [
+      {
+        text: "Adnyamathanha means 'hills' or 'rock people' (adnya = rock), and the Adnyamathanha are the Traditional Owners of the Ikara-Flinders Ranges.",
+        source: {
+          name: "National Parks SA — Ikara-Flinders Ranges National Park",
+          url: "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park",
+        },
+      },
+      {
+        text: "Yura Muda is the Adnyamathanha body of stories, law and culture; in it the Akurra (Creation serpents) shaped many features of the Flinders Ranges.",
+        source: {
+          name: "National Parks SA — Ikara-Flinders Ranges National Park",
+          url: "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park",
+        },
+      },
+      {
+        text: "In February 2016 Flinders Ranges National Park was renamed Ikara-Flinders Ranges National Park, using the Adnyamathanha name Ikara ('meeting place') for Wilpena Pound.",
+        source: {
+          name: "Wikipedia — Ikara–Flinders Ranges National Park",
+          url: "https://en.wikipedia.org/wiki/Ikara%E2%80%93Flinders_Ranges_National_Park",
+        },
+      },
+      {
+        text: "The park has been co-managed by a board of Adnyamathanha and Department for Environment and Water representatives since 2011.",
+        source: {
+          name: "Wikipedia — Ikara–Flinders Ranges National Park",
+          url: "https://en.wikipedia.org/wiki/Ikara%E2%80%93Flinders_Ranges_National_Park",
+        },
+      },
+      {
+        text: "Nepabunna was established on Adnyamathanha land by the United Aborigines Mission in 1931; nearby Iga Warta ('native orange') is an Adnyamathanha-run cultural tourism enterprise.",
+        source: { name: "Wikipedia — Nepabunna", url: "https://en.wikipedia.org/wiki/Nepabunna,_South_Australia" },
+      },
+      {
+        text: "In March 2009 the Adnyamathanha received a consent determination of native title over about 41,000 km² of the Flinders Ranges; their 1994 claim was the first lodged in South Australia.",
+        source: { name: "Green Left — Adnyamathanha native title", url: "https://greenleft.org.au/node/46863" },
+      },
+    ],
+    notablePeople: [
+      {
+        name: "Faith Thomas",
+        lifespan: "1933–2023",
+        role: "Cricketer and nurse",
+        bio: "Born at Nepabunna to an Adnyamathanha mother, she became the first Indigenous woman to represent Australia in any sport, playing a cricket Test against England in 1958. She was also South Australia's first Indigenous nurse employed as a public servant.",
+        source: { name: "Wikipedia — Faith Thomas", url: "https://en.wikipedia.org/wiki/Faith_Thomas" },
+      },
+    ],
+  },
+
+  narangga: {
+    keyFacts: [
+      {
+        text: "Narungga Country is Yorke Peninsula — Guuranda — traditionally shared by four clans: Kurnara in the north, Dilpa in the south, Wari in the west and Windarra in the east.",
+        source: { name: "Wikipedia — Yorke Peninsula", url: "https://en.wikipedia.org/wiki/Yorke_Peninsula" },
+      },
+      {
+        text: "Point Pearce, known to Narungga people as Bookooyanna (Burgiyana), was set up as a Moravian mission in 1868 and taken over by the state as an Aboriginal Station in 1915.",
+        source: {
+          name: "Wikipedia — Point Pearce, South Australia",
+          url: "https://en.wikipedia.org/wiki/Point_Pearce,_South_Australia",
+        },
+      },
+      {
+        text: "In March 2023 the Federal Court recognised the Narungga people as native title holders of Yorke Peninsula, from Mundoora in the north to Dhilba Guuranda-Innes National Park in the south, together with compensation for the loss of native title rights.",
+        source: { name: "SA Native Title Services — March 2023", url: "https://www.nativetitlesa.org/sants-news-march-2023/" },
+      },
+      {
+        text: "The Narungga language, Nharangga Warra, is being revived: a dictionary was published in 2006 and the language is being piloted in schools including Point Pearce.",
+        source: { name: "Wikipedia — Narungga language", url: "https://en.wikipedia.org/wiki/Narungga_language" },
+      },
+      {
+        text: "Dhilba Guuranda-Innes National Park on the southern tip of the peninsula carries a dual name that recognises the Southern Narungga region and its people.",
+        source: {
+          name: "SA Dept for Environment and Water — SA park names",
+          url: "https://environment.sa.gov.au/goodliving/posts/2019/05/sa-park-names",
+        },
+      },
+    ],
+    notablePeople: [
+      {
+        name: "Robert McKenzie Wanganeen",
+        lifespan: "1896–1975",
+        role: "Community leader and sportsman",
+        bio: "Born at Point Pearce, he led the local branch of the Australian Aborigines' League and organised petitions in the 1940s–50s for better wages and conditions for residents, while also captaining and coaching the local football team.",
+        source: {
+          name: "Australian Dictionary of Biography — Robert Wanganeen",
+          url: "https://adb.anu.edu.au/biography/wanganeen-robert-mckenzie-11957",
+        },
+      },
+      {
+        name: "Timothy Hughes",
+        lifespan: "1919–1976",
+        role: "Soldier and Aboriginal Lands Trust chairman",
+        bio: "Born at Point Pearce of Narungga and Kaurna descent, he won the Military Medal for bravery at Buna in 1942 and chaired the SA Aboriginal Lands Trust from 1966 to 1973.",
+        source: {
+          name: "Australian Dictionary of Biography — Timothy Hughes",
+          url: "https://adb.anu.edu.au/biography/hughes-timothy-10567",
+        },
+      },
+      {
+        name: "Tauto Sansbury",
+        lifespan: "c. 1949–2019",
+        role: "Justice advocate",
+        bio: "A Narungga man born at Point Pearce, he chaired the National Aboriginal Justice Advisory Committee for more than a decade and was NAIDOC Aboriginal of the Year in 1996.",
+        source: { name: "Wikipedia — Tauto Sansbury", url: "https://en.wikipedia.org/wiki/Tauto_Sansbury" },
+      },
+    ],
+  },
+
+  banggarla: {
+    keyFacts: [
+      {
+        text: "Barngarla Country lies on the eastern side of Eyre Peninsula, from Port Lincoln to the head of Spencer Gulf including Whyalla.",
+        source: { name: "Mobile Language Team — Barngarla", url: "https://mobilelanguageteam.com.au/languages/barngarla/" },
+      },
+      {
+        text: "In January 2015 the Federal Court recognised Barngarla native title over much of Eyre Peninsula, on a claim first lodged in 1996; Port Augusta followed in September 2021 after a 25-year process.",
+        source: {
+          name: "SBS NITV — Barngarla win 25-year battle for Port Augusta native title",
+          url: "https://www.sbs.com.au/nitv/article/barngarla-people-win-25-year-battle-for-port-augusta-native-title/s84liyhoa",
+        },
+      },
+      {
+        text: "In 1844 Lutheran missionary Clamor Schürmann published 'A Vocabulary of the Parnkalla Language', which is the main source for today's language reclamation.",
+        source: { name: "Wikipedia — Barngarla language", url: "https://en.wikipedia.org/wiki/Barngarla_language" },
+      },
+      {
+        text: "Barngarla language reclamation began in 2011, led by the community with linguist Ghil'ad Zuckermann of the University of Adelaide, with workshops in Port Lincoln, Whyalla and Port Augusta.",
+        source: { name: "Wikipedia — Barngarla people", url: "https://en.wikipedia.org/wiki/Barngarla_people" },
+      },
+      {
+        text: "In July 2023 the Federal Court set aside the decision to site a national radioactive waste facility near Kimba, in a judicial review brought by Barngarla Traditional Owners.",
+        source: {
+          name: "National Indigenous Times — Kimba ruling",
+          url: "https://nit.com.au/18-07-2023/6853/court-rules-in-favour-of-barngala-people-preventing-nuclear-waste-facility-in-kimba",
+        },
+      },
+    ],
+    notablePeople: [
+      {
+        name: "Moonie Davis",
+        role: "Barngarla and Gugada man; one of the last first-language speakers",
+        bio: "Linguist Luise Hercus recorded Barngarla vocabulary from him in the 1960s — recordings that now support the language's reclamation.",
+        source: {
+          name: "Næssan & Zuckermann (2022), Australian Journal of Linguistics",
+          url: "https://doi.org/10.1080/07268602.2022.2052015",
+        },
+      },
+    ],
+  },
 };
 
 export function getLocalityInfo(slug: string): LocalityInfo | undefined {
